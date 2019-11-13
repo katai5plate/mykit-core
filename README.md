@@ -1,39 +1,38 @@
 # mykit-core
 
-## マイキットの作り方
+## How to make
 
 1. `yarn init && yarn add katai5plate/core`
-2. 追加 ./index.js
+2. Add ./index.js
 ```js
 const resources = require(`${__dirname}/resources.json`);
 const scripts = require(`${__dirname}/scripts.json`);
 module.exports = () => require("mykit-core")(resources, scripts);
 ```
-3. 追加 ./resources.json
-- src: resources ディレクトリ内にある対象ファイルの名前
-  - 省略不可
-- dir: 出力先のディレクトリ
-  - 省略するとルートディレクトリ扱いになる
-- dist: 出力時のファイル名
-  - 省略すると src が入る
+3. Add ./resources.json
+- src: The name of the target file in the resources directory
+  - require.
+- dir: Output destination directory name
+  - optional. default: "" (Root)
+- dist: Output file name
+  - optional. default: src
 ```js
 [
   { "src": "vscode.setting.json", "dir": "vscode", "dist": "setting.json" },
-  { "src": "assets.d.ts", "dir": "@types", "dist": "assets.d.ts" },
-  { "src": "index.ts", "dir": "src", "dist": "index.ts" }
+  { "src": "index.html" }
 ]
 ```
-4. 追加 ./scripts.json
-- `mykit-install` は必ず入れ、環境構築に必要なパッケージを書き込む。
-- その他追加したい npm-scripts を書き入れる。
+4. Add ./scripts.json
+- `mykit-install` is require. The packages necessary for environment construction.
 ```js
 {
+  "hello": "node -e \"console.log('Hello, World!')\"",
   "mykit-install": "yarn add -D lodash"
 }
 ```
-5. README.md を書いて GitHub か npm にアップロードする
+5. Write README.md and upload to GitHub or npm.
 
-## 試行用
+## exp
 
 ```js
 try {
