@@ -1,4 +1,4 @@
-# mykit-ts
+# mykit-core
 
 ## 試行用
 
