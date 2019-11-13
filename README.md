@@ -9,7 +9,7 @@
 ```js
 const resources = require(`${__dirname}/resources.json`);
 const scripts = require(`${__dirname}/scripts.json`);
-module.exports = () => require("mykit-core")(resources, scripts);
+module.exports = () => require("mykit-core")(__dirname, resources, scripts);
 ```
 3. Add resources to ./resources
 4. Add ./resources.json
