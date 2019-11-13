@@ -1,5 +1,5 @@
 const fs = require("fs-extra");
-module.exports = (dirname, resources, scripts) => {
+module.exports = (dirname, resources = [], modify = {}) => {
   resources.forEach(({ src, dir, dist }) => {
     const root = !!dir ? `./${dir}/` : "./";
     const dest = `${root}${!!dist ? dist : src}`;
@@ -16,17 +16,16 @@ module.exports = (dirname, resources, scripts) => {
   try {
     if (fs.existsSync(pkg)) {
       console.log(`DETECTED ${pkg}`);
-      const currentPkg = fs.readJSONSync(pkg);
-      currentPkg.scripts = { ...(currentPkg.scripts || {}), ...scripts };
-      fs.outputFileSync(pkg, JSON.stringify(currentPkg, void 0, "  "));
+      const nextPkg = { ...fs.readJSONSync(pkg), ...modify };
+      fs.outputFileSync(pkg, JSON.stringify(nextPkg, void 0, "  "));
       console.log(`ADDED SCRIPTS IN ${pkg}`);
     } else {
       console.log(`${pkg} IS NOT FOUND`);
-      fs.outputFileSync(pkg, JSON.stringify({ scripts }, void 0, "  "));
+      fs.outputFileSync(pkg, JSON.stringify(modify, void 0, "  "));
       console.log(`ADDED ${pkg}`);
     }
   } catch (e) {
-    console.log(`FAILED ${pkg}`, e, { pkg, scripts });
+    console.log(`FAILED ${pkg}`, e, { pkg, modify });
     process.exit(1);
   }
   console.log("DONE");
