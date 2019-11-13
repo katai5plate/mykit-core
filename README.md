@@ -9,7 +9,8 @@ const resources = require(`${__dirname}/resources.json`);
 const scripts = require(`${__dirname}/scripts.json`);
 module.exports = () => require("mykit-core")(resources, scripts);
 ```
-3. Add ./resources.json
+3. Add resources to ./resources
+4. Add ./resources.json
 - src: The name of the target file in the resources directory
   - require.
 - dir: Output destination directory name
@@ -22,7 +23,7 @@ module.exports = () => require("mykit-core")(resources, scripts);
   { "src": "index.html" }
 ]
 ```
-4. Add ./scripts.json
+5. Add ./scripts.json
 - `mykit-install` is require. The packages necessary for environment construction.
 ```js
 {
@@ -30,7 +31,7 @@ module.exports = () => require("mykit-core")(resources, scripts);
   "mykit-install": "yarn add -D lodash"
 }
 ```
-5. Write README.md and upload to GitHub or npm.
+6. Write README.md and upload to GitHub or npm.
 
 ## exp
 
