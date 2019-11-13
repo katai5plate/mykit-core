@@ -1,5 +1,7 @@
 # mykit-core
 
+- example: https://github.com/katai5plate/mykit-ts
+
 ## How to make
 
 1. `yarn init && yarn add katai5plate/core`
