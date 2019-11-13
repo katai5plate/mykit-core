@@ -4,7 +4,7 @@
 
 ## How to make
 
-1. `yarn init -y && yarn add katai5plate/core`
+1. `yarn init -y && yarn add katai5plate/mykit-core`
 2. Add ./index.js
 ```js
 const resources = require(`${__dirname}/resources.json`);
