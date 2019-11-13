@@ -1,0 +1,14 @@
+{
+  "name": "mykit-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/katai5plate/mykit-ts",
+  "author": "<katai5plate.sub@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node test.js"
+  },
+  "dependencies": {
+    "fs-extra": "^8.1.0"
+  }
+}
