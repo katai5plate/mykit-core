@@ -2,7 +2,7 @@
 
 ## マイキットの作り方
 
-1. `yarn add katai5plate/core`
+1. `yarn init && yarn add katai5plate/core`
 2. 追加 ./index.js
 ```js
 const resources = require(`${__dirname}/resources.json`);
