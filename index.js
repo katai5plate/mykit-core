@@ -1,9 +1,9 @@
 const fs = require("fs-extra");
-module.exports = (resources, scripts) => {
+module.exports = (dirname, resources, scripts) => {
   resources.forEach(({ src, dir, dist }) => {
     const root = !!dir ? `./${dir}/` : "./";
     const dest = `${root}${!!dist ? dist : src}`;
-    const read = `${__dirname}/resources/${src}`;
+    const read = `${dirname}/resources/${src}`;
     try {
       fs.outputFileSync(dest, fs.readFileSync(read));
       console.log(`ADDED ${dest}`);
