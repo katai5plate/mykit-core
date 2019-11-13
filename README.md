@@ -13,7 +13,7 @@ module.exports = () => require("mykit-core")(resources, scripts);
 - src: resources ディレクトリ内にある対象ファイルの名前
   - 省略不可
 - dir: 出力先のディレクトリ
-  - 省略すると `./` が入る
+  - 省略するとルートディレクトリ扱いになる
 - dist: 出力時のファイル名
   - 省略すると src が入る
 ```js
